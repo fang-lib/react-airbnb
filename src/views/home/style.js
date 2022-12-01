@@ -5,4 +5,9 @@ export const HomeWrapper = styled.div`
     width: 100vw;
     height: 529px;
   }
+  
+  .home-content {
+    width: 1032px;
+    margin: 0 auto;
+  }
 `

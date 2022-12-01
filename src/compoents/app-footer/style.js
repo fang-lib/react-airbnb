@@ -7,7 +7,7 @@ export const FooterWrapper = styled.div`
 
   .footer-content {
     display: flex;
-    width: 1080px;
+    width: 1032px;
     margin: 0 auto;
     padding-bottom: 35px;
     border-bottom: 1px solid ${props => props.theme.color.borderColor};
