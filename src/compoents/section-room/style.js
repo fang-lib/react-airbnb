@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const RoomWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   margin-right: -16px;
 `

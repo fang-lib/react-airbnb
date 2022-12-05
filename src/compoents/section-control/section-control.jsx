@@ -2,6 +2,7 @@ import React, { memo, useState } from 'react'
 import { ControlWrapper } from './style'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import ScrollView from '../scroll-view/scroll-view'
 
 const SectionControl = memo((props) => {
   const { list=[], changeTabName } = props
@@ -13,11 +14,14 @@ const SectionControl = memo((props) => {
   }
   return (
     <ControlWrapper>
-      {
-        list.map((item, index) => (
-          <div className={classNames('item', {active: currentIndex === index})} key={item} onClick={e => changeIndex(index)}>{item}</div>
-        ))
-      }
+      <ScrollView>
+        {
+          list.map((item, index) => (
+            <div className={classNames('item', {active: currentIndex === index})} key={item} onClick={e => changeIndex(index)}>{item}</div>
+          ))
+        }
+      </ScrollView>
+      
     </ControlWrapper>
   )
 })

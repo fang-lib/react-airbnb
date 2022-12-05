@@ -10,7 +10,7 @@ const SectionRoomV1 = memo((props) => {
   return (
     <RoomV1Wrapper>
       <SectionTitle mainTitle={value.title}></SectionTitle>
-      <SectionRoom list={value.list} itemWidth={'25'}></SectionRoom>
+      <SectionRoom list={value.list} itemWidth="25"></SectionRoom>
       <SectionFooter text='显示更多' isOtherColor={false}></SectionFooter>
     </RoomV1Wrapper>
   )

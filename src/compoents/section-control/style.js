@@ -1,10 +1,7 @@
 import styled from "styled-components";
 
 export const ControlWrapper = styled.div`
-  display: flex;
-  align-items: center;
   margin-bottom: 20px;
-  overflow: scroll;
   
   ::-webkit-scrollbar { 
     display: none;
@@ -12,7 +9,7 @@ export const ControlWrapper = styled.div`
 
   .item {
     flex-shrink: 0;
-    padding: 14px 16px;
+    padding: 14px 42px;
     margin-right: 16px;
     border: 1px solid ${props => props.theme.color.borderColor};
     border-radius: 4px;
