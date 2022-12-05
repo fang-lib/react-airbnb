@@ -3,9 +3,9 @@ import { RoomItemWrapper } from './style'
 import { Rate } from 'antd'
 
 const RoomItem = memo((props) => {
-  const { item } = props
+  const { item, itemWidth } = props
   return (
-    <RoomItemWrapper typeTextColor={item.verify_info.text_color} rateColor={item.star_rating_color}>
+    <RoomItemWrapper typeTextColor={item.verify_info.text_color} rateColor={item.star_rating_color} itemWidth={itemWidth}>
       <img className='item-img' src={item.picture_url} alt=''/>
       <div className='item-type'>{item.verify_info.messages.join(' · ')}</div>
       <div className='item-desc over-ell-two'>{item.name}</div>

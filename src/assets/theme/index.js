@@ -1,7 +1,8 @@
 export const theme = {
   color: {
     primaryColor: "#ff385c",
-    borderColor: '#EBEBEB'
+    borderColor: '#EBEBEB',
+    activeColor: '#00848A'
   },
   mixins: {
     boxShadow: `

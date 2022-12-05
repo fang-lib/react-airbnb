@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const RoomItemWrapper = styled.div`
-  width: 242px;
-  height: 291px;
+  width: ${props => `${props.itemWidth}%`};
   padding-right: 16px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 
   .item-img {
     width: 100%;
-    height: 164px;
+    height: ${props => `${656 * props.itemWidth * 0.95 / 100}px`};
     object-fit: cover;
   }
 

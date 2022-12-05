@@ -5,4 +5,5 @@ export const RoomWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin-right: -16px;
 `

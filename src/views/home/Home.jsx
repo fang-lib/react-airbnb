@@ -3,28 +3,33 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 
 import coverImg from "@/assets/img/cover_01.jpeg"
 import { HomeWrapper } from './style'
-import { fetchGoodPriceData } from '@/store/modules/home'
-import SectionTitle from '@/compoents/section-title/section-title'
-import SectionRoom from '@/compoents/section-room/section-room'
+import { fetchHomeData } from '@/store/modules/home'
+import SectionRoomV1 from './c-cpns/section-room-v1/section-room-v1'
+import SeactionRoomV2 from './c-cpns/section-room-v2/section-room-v2'
+import { isEmptyObj } from '@/utils/tool'
 
 
 const Home = memo(() => {
-  const { goodPriceData } = useSelector((state) => {
+  const { goodPriceData, hightScoreData, recommendData, discountData } = useSelector((state) => {
     return {
-      goodPriceData: state.home.goodPriceData
+      goodPriceData: state.home.goodPriceData,
+      hightScoreData: state.home.hightScoreData,
+      recommendData: state.home.recommendData,
+      discountData: state.home.discountData
     }
   }, shallowEqual)
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchGoodPriceData())
+    dispatch(fetchHomeData())
   }, [])
   return (
     <HomeWrapper>
        <img className="banner" src={coverImg} alt="" />
        <div className='home-content'>
-        {/* 热门目的地 */}
-        <SectionTitle mainTitle={goodPriceData.title}></SectionTitle>
-        <SectionRoom list={goodPriceData.list}></SectionRoom>
+          {isEmptyObj(discountData) && <SeactionRoomV2 value={discountData}></SeactionRoomV2>}
+          {isEmptyObj(recommendData) && <SeactionRoomV2 value={recommendData}></SeactionRoomV2>}
+          <SectionRoomV1 value={hightScoreData}></SectionRoomV1>
+          <SectionRoomV1 value={goodPriceData}></SectionRoomV1>
        </div>
     </HomeWrapper>
   )
