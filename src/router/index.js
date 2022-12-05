@@ -1,3 +1,4 @@
+import Entire from "@/views/entire/entire"
 import React from "react"
 import { Navigate } from "react-router-dom"
 
@@ -10,6 +11,10 @@ const routes = [
   {
     path: '/home',
     element: <Home/>
+  },
+  {
+    path: '/entire',
+    element: <Entire/>
   }
 ]
 
