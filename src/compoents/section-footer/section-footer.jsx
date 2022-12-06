@@ -9,6 +9,7 @@ const SectionFooter = memo((props) => {
 
   const navigate = useNavigate()
   function toEntire() {
+    console.log('first')
     navigate('/entire')
   }
   return (
