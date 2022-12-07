@@ -1,3 +1,4 @@
+import Detail from "@/views/detail/detail"
 import Entire from "@/views/entire/entire"
 import React from "react"
 import { Navigate } from "react-router-dom"
@@ -15,6 +16,10 @@ const routes = [
   {
     path: '/entire',
     element: <Entire/>
+  },
+  {
+    path: '/detail',
+    element: <Detail/>
   }
 ]
 

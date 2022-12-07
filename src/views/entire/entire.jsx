@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 import { EntireWrapper } from './style'
 import filterData from "@/assets/data/filter_data.json"
@@ -8,13 +9,17 @@ import { changeCurrentPage, fetchEntireData } from '@/store/modules/entire/actio
 import FilterBar from '@/compoents/filter-bar/filter-bar'
 import RoomItem from '@/compoents/room-item/room-item'
 import { Pagination } from '@mui/material'
+import { changeDetailImgLIst } from '@/store/modules/detail'
+import storage from '@/utils/storage'
 
 
 const Entire = memo(() => {
+  const navigate = useNavigate()
+
   const { total, entireData } = useSelector((state) => ({
     total: state.entire.total,
     entireData: state.entire.entireData
-  }))
+  }), shallowEqual)
 
   const dispatch = useDispatch()
   useEffect(() => {
@@ -24,8 +29,14 @@ const Entire = memo(() => {
   function handleChangePage(e, value) {
     dispatch(changeCurrentPage(value - 1))
     dispatch(fetchEntireData())
+    window.scrollTo(0, 0)
   }
 
+  function toDetail(item) {
+    storage.setStorage('picture_urls', item.picture_urls)
+    dispatch(changeDetailImgLIst(item.picture_urls))
+    navigate('/detail')
+  }
   return (
     <EntireWrapper>
       {/* 筛选栏 */}
@@ -37,7 +48,7 @@ const Entire = memo(() => {
         <div className='entire-list'>
           {
             entireData?.list?.map((item, index) => (
-              <RoomItem key={item.id} item={item} itemWidth="20"></RoomItem>
+              <RoomItem key={item.id} item={item} itemWidth="20" onItemClick={toDetail}></RoomItem>
             ))
           }
         </div>
