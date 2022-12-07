@@ -22,6 +22,7 @@ export const PictureBrowerWrapper = styled.div`
     padding:  15px;
     font-size: 45px;
     color: #fff;
+    cursor: pointer;
   }
 
   .carousel {
@@ -42,6 +43,7 @@ export const PictureBrowerWrapper = styled.div`
     margin: auto 20px;
     font-size: 60px;
     color: #fff;
+    cursor: pointer;
   }
 
   .operation-left {
@@ -59,6 +61,7 @@ export const PictureBrowerWrapper = styled.div`
 
     .indictor-img_box {
       position: relative;
+      cursor: pointer;
 
       .indictor-img {
         width: 100px;
