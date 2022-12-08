@@ -19,7 +19,7 @@ export const ScrollViewWrapper = styled.div`
     border-radius: 50%;
     border: 1px solid ${props => props.theme.color.borderColor};
     background-color: #fff;
-    z-index: 99;
+    z-index: 9;
   }
   .rightBtn {
     right: -14px;

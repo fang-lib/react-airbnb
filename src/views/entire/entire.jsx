@@ -11,6 +11,7 @@ import RoomItem from '@/compoents/room-item/room-item'
 import { Pagination } from '@mui/material'
 import { changeDetailImgLIst } from '@/store/modules/detail'
 import storage from '@/utils/storage'
+import AppHeader from '@/compoents/app-header/app-header'
 
 
 const Entire = memo(() => {
@@ -39,6 +40,7 @@ const Entire = memo(() => {
   }
   return (
     <EntireWrapper>
+      <AppHeader/>
       {/* 筛选栏 */}
       <FilterBar list={filterData}></FilterBar>
       <div className='entire-content'>

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const HeaderWrapper = styled.div`
-  position: fixed;
+  position: ${props => props.isFixed ? 'fixed' : 'static'};
   top: 0;
   width: 100%;
   display: flex;

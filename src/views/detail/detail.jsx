@@ -1,3 +1,4 @@
+import AppHeader from '@/compoents/app-header/app-header'
 import PictureBrowser from '@/compoents/pircture-browser/picture-browser'
 import React, { memo, useState } from 'react'
 import { shallowEqual, useSelector } from 'react-redux'
@@ -21,6 +22,8 @@ const Detail = memo(() => {
   }
   return (
     <DetailWrapper>
+      <AppHeader isFixed={false}/>
+
       <div className='img-list_box' onClick={handleShowBrowser}>
         <div className='img-box'>
           <img className='left-img' src={detailImgList?.[0]} alt=''/>
