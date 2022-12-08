@@ -1,4 +1,4 @@
-import PictureBrowser from '@/compoents/pircture-browser/picture-brower'
+import PictureBrowser from '@/compoents/pircture-browser/picture-browser'
 import React, { memo, useState } from 'react'
 import { shallowEqual, useSelector } from 'react-redux'
 import { DetailWrapper } from './style'

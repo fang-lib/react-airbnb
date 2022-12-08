@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PictureBrowerWrapper = styled.div`
+export const PictureBrowserWrapper = styled.div`
   position: fixed;
   top: 0;
   right: 0;
@@ -10,6 +10,8 @@ export const PictureBrowerWrapper = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  padding-bottom: 60px;
+  box-sizing: border-box;
   background-color: #222;
   z-index: 99;
 
@@ -27,11 +29,14 @@ export const PictureBrowerWrapper = styled.div`
 
   .carousel {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 20px 0;
     width: 913px;
 
     &-img {
-      height: 611px;
+      max-height: 100%;
     }
   }
 
@@ -54,11 +59,28 @@ export const PictureBrowerWrapper = styled.div`
   }
 
   .indictor-box {
-    max-width: 913px;
-    height: 120px;
+    height: 93px;
     overflow: hidden;
+    transform: ${props => props.hiddenList ? 'translateY(60px)' : 'translateY(0px)'};
+    transition: transform 500ms ease;
 
+    .indictor-limit {
+      max-width: 913px;
+      height: ${props => props.hiddenList ? '20px' : '96px'};
+      overflow: hidden;
+      transition: height 500ms ease;
+    }
+    .indictor-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      color: #fff;
 
+      .header-text {
+        cursor: pointer;
+      }
+    }
     .indictor-img_box {
       position: relative;
       cursor: pointer;
