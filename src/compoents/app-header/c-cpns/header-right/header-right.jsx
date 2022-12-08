@@ -4,7 +4,9 @@ import IconGlobal from '@/assets/svg/icon_global'
 import IconMenu from '@/assets/svg/icon_menu'
 import { RightWraper } from './style'
 
-const HeaderRight = memo(() => {
+const HeaderRight = memo((props) => {
+  const { background } = props
+
   const [isShowPanel, setIsShowPanel] = useState(false)
  
   useEffect(() => {
@@ -20,7 +22,7 @@ const HeaderRight = memo(() => {
     }
   }, [])
   return (
-    <RightWraper>
+    <RightWraper background={background}>
       <span className='btn'>登录</span>
       <span className='btn'>注册</span>
       <span className='btn'>

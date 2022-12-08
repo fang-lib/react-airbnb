@@ -8,6 +8,7 @@ export const RightWraper = styled.div`
   justify-content: flex-end;
   font-size: 14px;
   font-weight: 600;
+  color: ${props => props.background ? '#fff' : '#000'};
   cursor: pointer;
 
   .btn {
@@ -29,6 +30,7 @@ export const RightWraper = styled.div`
     border-radius: 30px;
     padding: 4px 8px;
     color: #777;
+    background-color: #fff;
 
     ${props => props.theme.mixins.boxShadow}
   }

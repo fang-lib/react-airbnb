@@ -9,6 +9,6 @@ export const HeaderWrapper = styled.div`
   height: 80px;
   padding: 0 26px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: ${props => props.background ?? '#fff'};
   z-index: 99;
 `

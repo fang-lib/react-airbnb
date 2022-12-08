@@ -5,13 +5,16 @@ import HeaderRight from './c-cpns/header-right/header-right'
 import { HeaderWrapper } from './style'
 
 const AppHeader = memo((props) => {
-  const { isFixed = true } = props
+  const { isFixed = true, background, headerCenter } = props
 
   return (
-    <HeaderWrapper isFixed={isFixed}>
-      <HeaderLeft></HeaderLeft>
-      <HeaderCenter></HeaderCenter>
-      <HeaderRight></HeaderRight>
+    <HeaderWrapper isFixed={isFixed} background={background}>
+      <HeaderLeft background={background}></HeaderLeft>
+      {
+        headerCenter || <HeaderCenter></HeaderCenter>
+      }
+      
+      <HeaderRight background={background}></HeaderRight>
     </HeaderWrapper>
   )
 })

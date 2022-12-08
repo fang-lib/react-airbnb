@@ -3,13 +3,16 @@ import React, { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LeftWraper } from './style'
 
-const HeaderLeft = memo(() => {
+const HeaderLeft = memo((props) => {
+  const { background } = props
+
+
   const navigate = useNavigate()
   function toRedirect() {
     navigate('/')
   }
   return (
-    <LeftWraper onClick={toRedirect}>
+    <LeftWraper  background={background} onClick={toRedirect}>
       <IconLogo/>
     </LeftWraper>
   )
