@@ -12,7 +12,7 @@ const SectionRoomV4 = memo((props) => {
       <SectionTitle mainTitle={value.title} secondTitle={value.subtitle}></SectionTitle>
       <ScrollView>
         {
-          value.list.map(item => (
+          value.list?.map(item => (
             <RoomItem key={item.id} item={item} itemWidth="20"></RoomItem>
           ))
         }

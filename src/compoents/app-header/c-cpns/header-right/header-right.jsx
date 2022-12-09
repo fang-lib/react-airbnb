@@ -17,7 +17,6 @@ const HeaderRight = memo((props) => {
     window.addEventListener('click', hidePanel, true)
 
     return () => {
-      console.log('重新渲染')
       window.removeEventListener('click', hidePanel, true)
     }
   }, [])
