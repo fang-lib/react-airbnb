@@ -12,6 +12,11 @@ export const TabContentWrapper = styled.div`
     min-width: 250px;
     padding: 13px 32px;
     border-radius: 32px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #eee;
+    }
 
     .item-title {
       margin-bottom: 5px;

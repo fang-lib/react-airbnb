@@ -6,6 +6,7 @@ export const CenterWraper = styled.div`
   padding: 10px;
   border: 1px solid #DDDDDD;
   border-radius: 30px;
+  background-color: #fff;
   ${props => props.theme.mixins.boxShadow}
 
   .search-input {

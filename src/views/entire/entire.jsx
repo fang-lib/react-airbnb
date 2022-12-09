@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { memo } from 'react'
 import { useEffect } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'

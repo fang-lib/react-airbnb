@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const HeaderTabsWrapper = styled.div`
   position: relative;
   display: flex;
+  justify-content: center;
   margin-right: -16px;
   color: #fff;
 
